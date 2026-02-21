@@ -26,7 +26,56 @@
             }
         ],
         "applyLink": "https://docs.google.com/forms/d/e/1FAIpQLSfyDzyId39MCoblbsm_wVC1rK2Mc0bOj8fKt43r5X8GZ_GnEw/viewform",
-        "registrationDeadline": "May 3rd, 2025"
+        "registrationDeadline": "May 3rd, 2025",
+        "projects": [
+            {
+                "groupName": "Team Green",
+                "projectName": "Smart Waste Management",
+                "description": "An AI-powered system for optimizing waste collection routes in urban areas.",
+                "image": "https://via.placeholder.com/800x600?text=Smart+Waste+Management",
+                "pdf": "https://example.com/project-report.pdf"
+            },
+            {
+                "groupName": "Eco Warriors",
+                "projectName": "Sustainable Packaging",
+                "description": "Developing biodegradable packaging materials from agricultural waste.",
+                "image": "https://via.placeholder.com/800x600?text=Sustainable+Packaging",
+                "pdf": ""
+            }
+        ],
+        "participants": [
+            {
+                "name": "Jane Doe",
+                "affiliation": "University of Toronto",
+                "groupName": "Team Green"
+            },
+            {
+                "name": "John Smith",
+                "affiliation": "McGill University",
+                "groupName": "Team Green"
+            },
+            {
+                "name": "Alice Johnson",
+                "affiliation": "UBC",
+                "groupName": "Eco Warriors"
+            }
+        ],
+        "news": [
+            {
+                "title": "Hackathon Winners Announced",
+                "date": "August 15, 2025",
+                "type": "Competition Results",
+                "description": "Congratulations to Team Green for winning the 2025 Sustainability Hackathon with their innovative waste management solution.",
+                "image": "https://via.placeholder.com/400x300?text=Hackathon+Winners"
+            },
+            {
+                "title": "Upcoming Guest Lecture: Dr. Smith",
+                "date": "July 10, 2025",
+                "type": "Event",
+                "description": "Dr. Smith will be joining us to discuss the future of renewable energy.",
+                "link": "#"
+            }
+        ]
     },
     {
         "id": "school-2",
@@ -79,7 +128,9 @@
             }
         ],
         "applyLink": null,
-        "registrationDeadline": "March 10th, 2024"
+        "registrationDeadline": "March 10th, 2024",
+        "projects": [],
+        "participants": []
     },
     {
         "id": "school-1",
@@ -119,6 +170,8 @@
             }
         ],
         "applyLink": null,
-        "registrationDeadline": "Feb 10th, 2023"
+        "registrationDeadline": "Feb 10th, 2023",
+        "projects": [],
+        "participants": []
     }
 ]

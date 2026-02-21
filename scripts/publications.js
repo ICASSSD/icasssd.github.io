@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
     fetch('data/publications.bib')
         .then(response => response.text())
         .then(text => {
+            // Use global parseBibTeX from utils.js
             allPublications = parseBibTeX(text);
             renderPublications(allPublications);
         })
@@ -27,72 +28,6 @@ document.addEventListener('DOMContentLoaded', () => {
             );
             renderPublications(filtered);
         });
-    }
-
-    // Basic BibTeX Parser
-    function parseBibTeX(input) {
-        const entries = [];
-        // Match @type{key, ...} blocks
-        const regex = /@(\w+)\s*{\s*([^,]+),([^@]*?)\n}/gs; // Simplified regex, might need robustness
-        // Better split approach: split by @ then process
-
-        const rawEntries = input.split('@').slice(1); // skip empty first
-
-        rawEntries.forEach(raw => {
-            const typeMatch = raw.match(/^(\w+)\s*{/);
-            if (!typeMatch) return;
-
-            const type = typeMatch[1];
-            // Extract content between first { and last }
-            // Assuming well-formed bibtex with balanced braces is hard for regex, 
-            // so let's check basic structure: key, fields
-
-            const bodyStart = raw.indexOf('{');
-            const bodyEnd = raw.lastIndexOf('}');
-            if (bodyStart === -1) return; // End brace check can be flaky if not careful with parsing
-
-            const body = raw.substring(bodyStart + 1, bodyEnd > bodyStart ? bodyEnd : raw.length);
-
-            // Split fields by comma (simplified, assumes fields are on new lines or clearly comma separated)
-            // A robust parser would handle nested braces. For this task, we assume standard "field = {value}," format
-
-            const entry = { type: type, raw: body };
-
-            // Extract key
-            const keyMatch = body.match(/^\s*([^,]+),/);
-            if (keyMatch) {
-                entry.key = keyMatch[1].trim();
-            }
-
-            // Extract fields
-            const fieldRegex = /(\w+)\s*=\s*{([^}]*)}/g;
-            // Also handle quoted fields: field = "value"
-            // fieldRegex is too simple for multi-line JSON values or nested braces.
-
-            // Let's use a line-by-line approach for simplicity
-            const lines = body.split('\n');
-            lines.forEach(line => {
-                const eqIndex = line.indexOf('=');
-                if (eqIndex > -1) {
-                    const key = line.substring(0, eqIndex).trim().toLowerCase();
-                    let value = line.substring(eqIndex + 1).trim();
-
-                    // Cleanup trailing comma
-                    if (value.endsWith(',')) value = value.slice(0, -1);
-                    // Cleanup braces/quotes
-                    if ((value.startsWith('{') && value.endsWith('}')) || (value.startsWith('"') && value.endsWith('"'))) {
-                        value = value.slice(1, -1);
-                    }
-
-                    entry[key] = value;
-                }
-            });
-
-            if (entry.title) entries.push(entry);
-        });
-
-        // Sort by year descending
-        return entries.sort((a, b) => (b.year || 0) - (a.year || 0));
     }
 
     function renderPublications(publications) {
@@ -129,7 +64,7 @@ document.addEventListener('DOMContentLoaded', () => {
                                     <div class="flex flex-wrap gap-4 text-sm text-gray-500 mb-4">
                                         ${pub.journal ? `<span class="flex items-center"><i class="fas fa-book-journal-whills mr-2 text-teal-500"></i> ${pub.journal}</span>` : ''}
                                         ${pub.booktitle ? `<span class="flex items-center"><i class="fas fa-users mr-2 text-indigo-500"></i> ${pub.booktitle}</span>` : ''}
-                                        <span class="px-2 py-0.5 bg-gray-100 rounded text-xs font-mono uppercase text-gray-500 self-center">${pub.type}</span>
+                                        ${pub.type ? `<span class="px-2 py-0.5 bg-gray-100 rounded text-xs font-mono uppercase text-gray-500 self-center">${pub.type}</span>` : ''}
                                     </div>
 
                                     ${pub.abstract ? `
@@ -144,7 +79,7 @@ document.addEventListener('DOMContentLoaded', () => {
                                                 View Paper <i class="fas fa-external-link-alt ml-1 text-xs"></i>
                                             </a>
                                         ` : ''}
-                                        <!-- Add Google Scholar link or other metadata actions here -->
+                                        ${pub.school_id ? `<span class="text-xs text-gray-400 self-center ml-auto">School: ${pub.school_id}</span>` : ''}
                                     </div>
                                 </div>
                             </div>

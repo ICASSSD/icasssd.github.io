@@ -22,13 +22,25 @@ document.addEventListener('DOMContentLoaded', () => {
     if (container) {
         Promise.all([
             fetch('../data/research-schools.json').then(res => res.json()),
-            fetch('../data/publications.json').then(res => res.json())
+            fetch('../data/publications.bib').then(res => res.text())
         ])
-            .then(([schoolsData, publicationsData]) => {
+            .then(([schoolsData, publicationsBib]) => {
+                // Parse BibTeX
+                const allPublications = parseBibTeX(publicationsBib);
+
+                // Group by School ID
+                const publicationsMap = {};
+                allPublications.forEach(pub => {
+                    if (pub.school_id) {
+                        if (!publicationsMap[pub.school_id]) publicationsMap[pub.school_id] = [];
+                        publicationsMap[pub.school_id].push(pub);
+                    }
+                });
+
                 // Render Navigation
                 renderNavigation(schoolsData);
                 // Render Content
-                renderSchools(schoolsData, publicationsData);
+                renderSchools(schoolsData, publicationsMap);
             })
             .catch(error => console.error('Error loading data:', error));
     }
@@ -96,11 +108,7 @@ document.addEventListener('DOMContentLoaded', () => {
         container.innerHTML = schools.map((school, index) => {
             const hasPublications = publicationsMap[school.id] && publicationsMap[school.id].length > 0;
 
-            // We need to pass the school ID to the global scope or handle the click here. 
-            // Since innerHTML clears listeners, we'll use onclick attribute or delegate.
-            // But strict CSP might block onclick. Ideally use delegation. 
-            // For now, attaching the data to a data-attribute and using a global handler or delegation.
-            // Let's use a global handler for simplicity in this context.
+            // Global handler for publications modal
             window.openPubs = (schoolId) => {
                 if (publicationsMap[schoolId]) {
                     currentPublications = publicationsMap[schoolId];
@@ -136,10 +144,14 @@ document.addEventListener('DOMContentLoaded', () => {
                             ${renderApplyButton(school)}
 
                             ${hasPublications ? `
-                                <button onclick="openPubs('${school.id}')" class="flex items-center justify-center w-full px-4 py-2 bg-white text-dark text-sm font-bold rounded-lg hover:bg-gray-50 transition-colors border-2 border-gray-200">
+                                <button onclick="openPubs('${school.id}')" class="flex items-center justify-center w-full px-4 py-2 bg-white text-dark text-sm font-bold rounded-lg hover:bg-gray-50 transition-colors border-2 border-gray-200 mb-2">
                                     <i class="fas fa-book-open mr-2 text-teal-500"></i> Publications
                                 </button>
                             ` : ''}
+
+                            <a href="school-details.html?id=${school.id}" class="flex items-center justify-center w-full px-4 py-2 bg-gray-800 text-white text-sm font-bold rounded-lg hover:bg-gray-700 transition-colors shadow-md">
+                                <i class="fas fa-info-circle mr-2"></i> View Details
+                            </a>
                         </div>
                     </div>
 
@@ -209,9 +221,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
         pubImage.src = pub.image || 'https://via.placeholder.com/600x400?text=No+Image';
         pubTitle.textContent = pub.title;
-        pubAuthors.textContent = pub.authors;
-        pubAbstract.textContent = pub.abstract;
-        pubLink.href = pub.link;
+        pubAuthors.textContent = pub.author; // BibTeX uses 'author'
+        pubAbstract.textContent = pub.abstract || 'No abstract available.';
+        pubLink.href = pub.url || '#';
 
         // Update Counter
         if (pubCounter) {
