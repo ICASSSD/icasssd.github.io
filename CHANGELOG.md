@@ -18,6 +18,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **Membership Page**: Added a new page for membership details.
 - **Documentation**: Generated `CHANGELOG.md` to track project history.
 - **Assets**: Added new video asset `videos/V2.mp4` for background use.
+- **Mentors Section**: Added a new horizontally scrolling two-row slider to the `events/research-school.html` landing page to display research school mentors, fetching data from a newly created `data/school-mentors.json`.
+- **Resources Section**: Added a new "Resources" grid to `events/school-details.html` to dynamically link supplementary PDFs (like Agendas, Abstracts, and Closing Ceremonies) defined in the new `resources` array in `data/research-schools.json`.
+- **Flyer Linking**: Integrated "Download Flyer" logic directly onto the individual school details page (`events/school-details.html`), positioned alongside the "Apply Now" CTA.
 
 ### Changed
 - **Dynamic Content Fetching**: Scripts for publications and schools (`scripts/publications.js`, `scripts/school-details.js`, `scripts/research-school.js`) now natively fetch and parse `data/publications.bib`.
@@ -27,6 +30,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **Removed Caching**: Implemented a no-caching policy to ensure dynamic JSON and BibTeX data updates are immediately visible to users.
 - **Navigation Menu**: Updated the global navigation bar (`scripts/layout.js`) based on organizational feedback.
 - **Conference Date & Styling**: Updated presentation dates, AISG talk schedules, and made minor adjustments to `styles/style.css`.
+- **Resource Directory Architecture**: Standardized the storage mechanism for supplementary research school PDFs (`resources/research_school/YYYY/파일명.pdf`) for dynamic loading.
 
 ### Removed
 - **`data/publications.json`**: Completely deleted in favor of the new `publications.bib` source.

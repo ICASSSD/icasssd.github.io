@@ -5,6 +5,7 @@
         "title": "Third Research School on Sustainable Solutions",
         "date": "May - August 2025",
         "theme": "Dynamic Sustainable Solutions",
+        "flyer": "flyer.pdf",
         "description": "The Third Research School continues the tradition of multi-disciplinary inquiry into sustainability. It focuses on viewing sustainability through holistic, integrative, and critical thinking, moving beyond traditional academic silos.",
         "objectives": [
             "Co-Author a research paper at the end of the school",
@@ -75,6 +76,18 @@
                 "description": "Dr. Smith will be joining us to discuss the future of renewable energy.",
                 "link": "#"
             }
+        ],
+        "resources": [
+            {
+                "title": "Project Abstracts",
+                "file": "Abstracts.pdf",
+                "icon": "fa-file-pdf"
+            },
+            {
+                "title": "Closing Ceremony",
+                "file": "Closing Ceremony.pdf",
+                "icon": "fa-file-pdf"
+            }
         ]
     },
     {
@@ -83,6 +96,7 @@
         "title": "Second Research School on Sustainable Solutions",
         "date": "April - June 2024",
         "theme": "Dynamic Sustainable Solutions",
+        "flyer": "flyer.pdf",
         "description": "Building on the success of the first year, the Second Research School emphasized the 'Dynamic' nature of sustainable solutions, integrating AI and systems thinking into the core curriculum.",
         "objectives": [
             "Identify research topics in sustainability",
@@ -130,7 +144,19 @@
         "applyLink": null,
         "registrationDeadline": "March 10th, 2024",
         "projects": [],
-        "participants": []
+        "participants": [],
+        "resources": [
+            {
+                "title": "Agenda",
+                "file": "Agenda.pdf",
+                "icon": "fa-file-pdf"
+            },
+            {
+                "title": "Closing Ceremony",
+                "file": "Closing Ceremony.pdf",
+                "icon": "fa-file-pdf"
+            }
+        ]
     },
     {
         "id": "school-1",
@@ -138,6 +164,7 @@
         "title": "First Research School on Sustainable Solutions",
         "date": "February - August 2023",
         "theme": "Sustainable Solutions",
+        "flyer": "flyer.pdf",
         "description": "The inaugural Research School established the foundation for our educational outreach, bringing together students and experts to explore the intersection of technology, consciousness, and sustainability.",
         "objectives": [
             "Foster innovation and practical problem-solving",
@@ -172,6 +199,7 @@
         "applyLink": null,
         "registrationDeadline": "Feb 10th, 2023",
         "projects": [],
-        "participants": []
+        "participants": [],
+        "resources": []
     }
 ]

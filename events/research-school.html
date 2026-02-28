@@ -60,6 +60,43 @@
         </div>
     </div>
 
+    <!-- Mentors Section -->
+    <div class="bg-white py-20 border-t border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <span class="inline-block text-teal-600 font-bold tracking-wider uppercase text-sm mb-2">Guided By
+                    Experts</span>
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Our Mentors</h2>
+                <div class="w-16 h-1 bg-teal-500 mx-auto mt-4 rounded-full"></div>
+            </div>
+            <style>
+                #mentors-grid::-webkit-scrollbar {
+                    display: none;
+                }
+            </style>
+            <div class="relative w-full max-w-full group px-8">
+                <button id="mentors-prev"
+                    class="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white shadow-xl rounded-full w-12 h-12 flex items-center justify-center text-teal-600 hover:bg-teal-600 hover:text-white transition-colors opacity-0 group-hover:opacity-100 disabled:opacity-30 disabled:hover:bg-white disabled:hover:text-teal-600 -ml-4 hidden md:flex border border-gray-100">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+
+                <div id="mentors-grid"
+                    class="grid grid-rows-2 grid-flow-col gap-6 overflow-x-auto pb-6 pt-2 snap-x snap-mandatory scroll-smooth"
+                    style="-ms-overflow-style: none; scrollbar-width: none;">
+                    <!-- Injected via JS -->
+                    <div class="col-span-full flex justify-center py-10 w-full col-start-1">
+                        <i class="fas fa-circle-notch fa-spin text-3xl text-gray-400"></i>
+                    </div>
+                </div>
+
+                <button id="mentors-next"
+                    class="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white shadow-xl rounded-full w-12 h-12 flex items-center justify-center text-teal-600 hover:bg-teal-600 hover:text-white transition-colors opacity-0 group-hover:opacity-100 disabled:opacity-30 disabled:hover:bg-white disabled:hover:text-teal-600 -mr-4 hidden md:flex border border-gray-100">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
     <!-- Join CTA -->
     <div class="bg-teal-800 py-16">
         <div class="max-w-4xl mx-auto px-4 text-center text-white">
@@ -106,8 +143,7 @@
                             </div>
 
                             <!-- Right: Content -->
-                            <div
-                                class="md:col-span-1 p-8 md:p-12 flex flex-col justify-center h-full max-h-[80vh] overflow-y-auto">
+                            <div class="md:col-span-1 p-8 md:p-12 flex flex-col justify-center h-full">
                                 <span id="pub-counter"
                                     class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-4 block"></span>
                                 <h3 id="pub-title" class="text-2xl md:text-3xl font-bold text-dark mb-4 leading-tight">

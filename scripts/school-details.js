@@ -98,6 +98,11 @@ document.addEventListener('DOMContentLoaded', () => {
             document.getElementById('participants-section').classList.remove('hidden');
         }
 
+        // Resources
+        if (school.resources && school.resources.length > 0) {
+            renderResources(school);
+        }
+
         // Publications
         if (publications && publications.length > 0) {
             renderPublications(publications);
@@ -107,6 +112,20 @@ document.addEventListener('DOMContentLoaded', () => {
         if (school.news && school.news.length > 0) {
             renderNews(school.news);
         }
+    }
+
+    function renderResources(school) {
+        const section = document.getElementById('resources-section');
+        const grid = document.getElementById('resources-grid');
+        const resourceBasePath = '/resources/research_school/' + school.year + '/';
+
+        section.classList.remove('hidden');
+        grid.innerHTML = school.resources.map(res => `
+            <a href="${resourceBasePath}${res.file}" target="_blank" class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 flex flex-col items-center justify-center hover:shadow-md transition-all group text-center block">
+                <i class="fas ${res.icon || 'fa-file-pdf'} text-4xl text-teal-500 mb-4 group-hover:text-teal-600 transition-colors"></i>
+                <h4 class="font-bold text-gray-900 group-hover:text-teal-700 transition-colors">${res.title}</h4>
+            </a>
+        `).join('');
     }
 
     function renderPublications(publications) {
@@ -181,21 +200,37 @@ document.addEventListener('DOMContentLoaded', () => {
         const container = document.getElementById('apply-section');
         const isOpen = isRegistrationOpen(school.registrationDeadline);
 
-        if (school.applyLink && isOpen) {
-            container.innerHTML = `
-                <a href="${school.applyLink}" target="_blank" class="inline-block bg-teal-600 text-white text-xl font-bold px-10 py-4 rounded-full hover:bg-teal-700 transition-colors shadow-lg hover:shadow-xl transform hover:-translate-y-1">
-                    Apply Now
+        let html = '';
+
+        if (school.flyer) {
+            html += `
+                <a href="/resources/research_school/${school.year}/${school.flyer}" target="_blank" class="inline-flex items-center justify-center bg-white text-teal-700 font-bold px-8 py-3 rounded-full hover:bg-teal-50 border-2 border-teal-600 transition-colors shadow-sm hover:shadow-md transform hover:-translate-y-0.5 whitespace-nowrap">
+                    <i class="fas fa-file-pdf mr-2"></i> Download Flyer
                 </a>
-                <p class="mt-4 text-gray-500">Registration closes on ${school.registrationDeadline}</p>
-            `;
-        } else {
-            container.innerHTML = `
-                <button disabled class="inline-block bg-gray-200 text-gray-400 text-xl font-bold px-10 py-4 rounded-full cursor-not-allowed">
-                    Registration Closed
-                </button>
-                 <p class="mt-4 text-gray-400">Registration closed on ${school.registrationDeadline}</p>
             `;
         }
+
+        if (school.applyLink && isOpen) {
+            html += `
+                <div class="flex flex-col items-center">
+                    <a href="${school.applyLink}" target="_blank" class="inline-flex items-center justify-center bg-teal-600 text-white font-bold px-8 py-3 rounded-full hover:bg-teal-700 transition-colors shadow-md hover:shadow-lg transform hover:-translate-y-0.5 whitespace-nowrap">
+                        Apply Now
+                    </a>
+                    <span class="mt-2 text-gray-500 text-sm font-medium">Closes: ${school.registrationDeadline}</span>
+                </div>
+            `;
+        } else {
+            html += `
+                <div class="flex flex-col items-center">
+                    <button disabled class="inline-flex items-center justify-center bg-gray-200 text-gray-400 font-bold px-8 py-3 rounded-full cursor-not-allowed whitespace-nowrap">
+                        Registration Closed
+                    </button>
+                    <span class="mt-2 text-gray-400 text-sm font-medium">Closed: ${school.registrationDeadline}</span>
+                </div>
+            `;
+        }
+
+        container.innerHTML = html;
     }
 
     function isRegistrationOpen(deadlineStr) {
@@ -226,7 +261,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 </div>
                 
                 <!-- Right: Content -->
-                <div class="md:w-1/2 p-8 md:p-12 flex flex-col bg-white relative z-20 overflow-y-auto">
+                <div class="w-full md:w-1/2 p-8 md:p-12 flex flex-col bg-white relative z-20 h-full overflow-y-auto">
                     <div class="mb-6 mt-4">
                         <span class="inline-flex items-center px-3 py-1 bg-teal-50 text-teal-700 text-xs font-bold uppercase tracking-wider rounded-full mb-3 border border-teal-100">
                             <i class="fas fa-users mr-2"></i> ${project.groupName}

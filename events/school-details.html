@@ -143,9 +143,12 @@
                 <div class="mb-16 max-w-4xl">
                     <h2 class="text-2xl font-bold text-teal-900 mb-6 border-b-2 border-teal-100 pb-2 inline-block">About
                         the School</h2>
-                    <p id="school-description" class="text-xl text-gray-700 leading-relaxed font-light">
+                    <p id="school-description" class="text-xl text-gray-700 leading-relaxed font-light mb-8">
                         Description goes here.
                     </p>
+
+                    <!-- Moved CTA -->
+                    <div id="apply-section" class="flex flex-col sm:flex-row items-start gap-4"></div>
                 </div>
 
                 <!-- Projects Showcase Section -->
@@ -154,7 +157,7 @@
                         Student Projects</h2>
 
                     <div
-                        class="relative group bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-100 min-h-[500px]">
+                        class="relative group bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-100 h-[600px] md:h-[500px]">
                         <!-- Slider Content -->
                         <div id="slider-track" class="h-full relative">
                             <!-- Slides Injected via JS -->
@@ -217,6 +220,15 @@
                     </div>
                 </div>
 
+                <!-- Resources Section -->
+                <div id="resources-section" class="mb-20 hidden">
+                    <h2 class="text-2xl font-bold text-teal-900 mb-8 border-b-2 border-teal-100 pb-2 inline-block">
+                        Resources</h2>
+                    <div id="resources-grid" class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                        <!-- Injected via JS -->
+                    </div>
+                </div>
+
                 <!-- Publications Section -->
                 <div id="publications-section" class="mb-20 hidden">
                     <h2 class="text-2xl font-bold text-teal-900 mb-8 border-b-2 border-teal-100 pb-2 inline-block">
@@ -242,11 +254,6 @@
                         id="school-schedule">
                         <!-- Injected -->
                     </div>
-                </div>
-
-                <!-- CTA -->
-                <div class="text-center mb-16">
-                    <div id="apply-section"></div>
                 </div>
 
             </div>

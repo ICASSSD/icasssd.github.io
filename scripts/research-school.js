@@ -22,9 +22,10 @@ document.addEventListener('DOMContentLoaded', () => {
     if (container) {
         Promise.all([
             fetch('../data/research-schools.json').then(res => res.json()),
-            fetch('../data/publications.bib').then(res => res.text())
+            fetch('../data/publications.bib').then(res => res.text()),
+            fetch('../data/school-mentors.json').then(res => res.json())
         ])
-            .then(([schoolsData, publicationsBib]) => {
+            .then(([schoolsData, publicationsBib, mentorsData]) => {
                 // Parse BibTeX
                 const allPublications = parseBibTeX(publicationsBib);
 
@@ -41,8 +42,57 @@ document.addEventListener('DOMContentLoaded', () => {
                 renderNavigation(schoolsData);
                 // Render Content
                 renderSchools(schoolsData, publicationsMap);
+
+                // Render Mentors
+                if (mentorsData && mentorsData.length > 0) {
+                    renderMentors(mentorsData);
+                }
             })
             .catch(error => console.error('Error loading data:', error));
+    }
+
+    function renderMentors(mentors) {
+        const grid = document.getElementById('mentors-grid');
+        if (!grid) return;
+
+        grid.innerHTML = mentors.map(mentor => `
+            <div class="w-[260px] md:w-[280px] shrink-0 snap-center bg-gray-50 rounded-2xl p-6 text-center shadow-[0_2px_8px_rgba(0,0,0,0.06)] border border-gray-100/50 hover:shadow-lg transition-shadow">
+                <div class="w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden border-4 border-white shadow-sm">
+                    <img src="${mentor.image}" alt="${mentor.name}" class="w-full h-full object-cover" onerror="this.src='https://via.placeholder.com/300x300?text=No+Photo'">
+                </div>
+                <h4 class="font-bold text-gray-900 mb-1">${mentor.name}</h4>
+                <p class="text-sm text-teal-600 font-medium">${mentor.affiliation}</p>
+            </div>
+        `).join('');
+
+        // Slider logic
+        const prevBtn = document.getElementById('mentors-prev');
+        const nextBtn = document.getElementById('mentors-next');
+
+        if (prevBtn && nextBtn) {
+            const updateButtons = () => {
+                prevBtn.disabled = grid.scrollLeft <= 5;
+                nextBtn.disabled = grid.scrollLeft + grid.clientWidth >= grid.scrollWidth - 5;
+            };
+
+            const getScrollAmount = () => {
+                const firstCard = grid.firstElementChild;
+                return firstCard ? firstCard.offsetWidth + 24 : 300; // 24 is gap-6
+            };
+
+            prevBtn.addEventListener('click', () => {
+                grid.scrollBy({ left: -getScrollAmount() * 2, behavior: 'smooth' }); // Scroll 2 cols (4 cards) at a time
+            });
+
+            nextBtn.addEventListener('click', () => {
+                grid.scrollBy({ left: getScrollAmount() * 2, behavior: 'smooth' });
+            });
+
+            grid.addEventListener('scroll', updateButtons);
+            // Initial check
+            setTimeout(updateButtons, 100);
+            window.addEventListener('resize', updateButtons);
+        }
     }
 
     function renderNavigation(schools) {
@@ -136,7 +186,7 @@ document.addEventListener('DOMContentLoaded', () => {
                             </div>
                             
                             ${school.flyer ? `
-                                <a href="${school.flyer}" target="_blank" class="flex items-center justify-center w-full px-4 py-2 bg-teal-50 text-teal-700 text-sm font-bold rounded-lg hover:bg-teal-100 transition-colors mb-4 border border-teal-200">
+                                <a href="/resources/research_school/${school.year}/${school.flyer}" target="_blank" class="flex items-center justify-center w-full px-4 py-2 bg-teal-50 text-teal-700 text-sm font-bold rounded-lg hover:bg-teal-100 transition-colors mb-4 border border-teal-200">
                                     <i class="fas fa-file-pdf mr-2"></i> Download Flyer
                                 </a>
                             ` : ''}
