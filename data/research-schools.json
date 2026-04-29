@@ -1,5 +1,91 @@
 [
     {
+        "id": "school-4",
+        "year": "2026",
+        "title": "Fourth Research School on Sustainable Solutions",
+        "date": "",
+        "theme": "Dynamic Sustainable Solutions",
+        "flyer": "flyer.pdf",
+        "description": "The Fourth Research School continues the tradition of multi-disciplinary inquiry into sustainability. It focuses on viewing sustainability through holistic, integrative, and critical thinking, moving beyond traditional academic silos.",
+        "objectives": [
+            "Equip participants with the skills to design, conduct, and write up research in sustainability science.",
+            "Expose participants to frontier research across the full spectrum of sustainability science",
+            "Stimulate multi-disciplinary dialogue and critical thinking on complex sustainability challenges."
+        ],
+        "topics": [
+            "Agroecology and Sustainable Food Systems",
+            "Green Engineering",
+            "Greenhouse Gas Emissions",
+            "Circular Economy and Corporate Sustainability",
+            "Socioeconomic aspects of Sustainable Development",
+            "AI for Sustainability"
+        ],
+        "schedule": [
+            {
+                "date": "May 30, 2026",
+                "event": "Opening Keynote and Panel: Dynamic Sustainable Solutions for the Next Century / Welcome and Orientation"
+            },
+            {
+                "date": "June 6, 2026",
+                "event": "Thematic Lecture 1 / Identifying Research Themes & Forming Teams"
+            },
+            {
+                "date": "June 13, 2026",
+                "event": "Research Design Workshop: Problem Statement, Research Questions, Objectives, and Methods / Team-Based Proposal Development"
+            },
+            {
+                "date": "June 20, 2026",
+                "event": "Thematic Lecture 2 / Proposal Clinic with Mentor Feedback"
+            },
+            {
+                "date": "June 27, 2026",
+                "event": "Research Methods and Sources Workshop / Developing Research Frameworks and Work Plans"
+            },
+            {
+                "date": "July 4, 2026",
+                "event": "Thematic Lecture 3 / Guided Group Work on Research Projects"
+            },
+            {
+                "date": "July 11, 2026",
+                "event": "Stage 1 Progress Presentations: Research Question, Framework, and Method / Feedback and Discussion"
+            },
+            {
+                "date": "July 18, 2026",
+                "event": "Thematic Lecture 4 / Group Work on Analysis and Paper Sections"
+            },
+            {
+                "date": "July 25, 2026",
+                "event": "Academic Writing Workshop: Structure, Argument, Evidence, and Referencing / Drafting Key Sections of the Paper"
+            },
+            {
+                "date": "Aug 8, 2026",
+                "event": "Thematic Lecture 5 / Developing Results, Discussion, & Conclusion"
+            },
+            {
+                "date": "Aug 15, 2026",
+                "event": "Stage 2 Progress Presentations: Draft Findings and Paper Structure / Draft Paper Review and Peer Feedback"
+            },
+            {
+                "date": "Aug 22, 2026",
+                "event": "Revision and Paper Refinement Workshop / Revising Drafts and Strengthening Arguments"
+            },
+            {
+                "date": "Aug 29 - Sep 12, 2026",
+                "event": "Independent Team Work and Mentor Consultations / Refining and Finalising Papers"
+            },
+            {
+                "date": "Sep 19, 2026",
+                "event": "Closing Symposium: Participant Research Presentations / Certificates and Closing Remarks"
+            }
+        ],
+        "applyLink": "https://forms.gle/5DFheFSy4MVdD6g26",
+        "registrationDeadline": "May 10, 2026",
+        "projects": [],
+        "participants": [],
+        "news": [],
+        "resources": []
+    },
+    {
         "id": "school-3",
         "year": "2025",
         "title": "Third Research School on Sustainable Solutions",

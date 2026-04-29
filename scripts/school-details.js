@@ -142,13 +142,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 <div class="p-6 flex-grow flex flex-col">
                     <h3 class="font-bold text-lg text-gray-800 mb-2 leading-tight line-clamp-2">${pub.title}</h3>
                     <p class="text-xs font-semibold text-teal-600 uppercase tracking-wider mb-3 line-clamp-1">${pub.author}</p>
-                    <p class="text-gray-600 text-sm mb-4 line-clamp-3">${pub.abstract || 'No abstract available.'}</p>
                     <div class="mt-auto pt-4 border-t border-gray-50">
                         ${pub.url ? `
                         <a href="${pub.url}" target="_blank" class="text-sm font-bold text-teal-700 hover:text-teal-900 flex items-center">
-                            Read Paper <i class="fas fa-arrow-right ml-2 text-xs"></i>
+                            View Publication <i class="fas fa-external-link-alt ml-2 text-xs"></i>
                         </a>
-                        ` : ''}
+                        ` : '<span class="text-sm text-gray-400 italic">Link not available</span>'}
                     </div>
                 </div>
             </div>
@@ -229,6 +228,15 @@ document.addEventListener('DOMContentLoaded', () => {
                 </div>
             `;
         }
+
+        // Add Get Notified button at the end
+        html += `
+            <div class="flex flex-col items-center">
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLScJPu58-7ssblpIlcPLtplErU-g62qUf42u3F9LHwijILi-WQ/viewform?usp=publish-editor" target="_blank" class="inline-flex items-center justify-center bg-teal-800 text-white font-bold px-8 py-3 rounded-full hover:bg-teal-900 transition-colors shadow-md hover:shadow-lg transform hover:-translate-y-0.5 whitespace-nowrap">
+                    Get Notified <i class="fas fa-bell ml-2"></i>
+                </a>
+            </div>
+        `;
 
         container.innerHTML = html;
     }

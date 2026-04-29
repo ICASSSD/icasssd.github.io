@@ -85,6 +85,10 @@ document.addEventListener('DOMContentLoaded', () => {
                                 <a href="${basePath}membership.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-teal-50 hover:text-primary">
                                     <i class="fas fa-user-plus w-5"></i> Member Sign Up
                                 </a>
+                                <div class="border-t border-gray-100 my-1"></div>
+                                <a href="https://docs.google.com/forms/d/e/1FAIpQLScJPu58-7ssblpIlcPLtplErU-g62qUf42u3F9LHwijILi-WQ/viewform?usp=publish-editor" target="_blank" class="block px-4 py-2 text-sm text-primary font-bold hover:bg-teal-50">
+                                    <i class="fas fa-bell w-5 text-sm"></i> Get Notified
+                                </a>
                         </div>
                     </div>
                     <!-- Mobile menu button -->
@@ -113,6 +117,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     <div class="border-t border-gray-100 my-1"></div>
                     <a href="${basePath}about.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary hover:bg-teal-50">About Us</a>
                     <a href="https://forms.gle/D2Ueua9ELjv7ebzN6" target="_blank" class="block px-3 py-2 rounded-md text-base font-medium text-primary hover:bg-teal-50 font-bold">Member Sign Up</a>
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLScJPu58-7ssblpIlcPLtplErU-g62qUf42u3F9LHwijILi-WQ/viewform?usp=publish-editor" target="_blank" class="block px-3 py-2 rounded-md text-base font-medium text-primary hover:bg-teal-50 font-bold">Get Notified <i class="fas fa-bell ml-1 text-sm"></i></a>
                 </div>
             </div>
         </nav>
