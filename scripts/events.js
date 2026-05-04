@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const modalActionBtn = document.getElementById('modal-action-btn');
 
     // Fetch Events Data
-    fetch('data/events.json')
+    fetch('data/events.json?v=' + new Date().getTime())
         .then(response => response.json())
         .then(data => {
             // Sort events by sortDate descending (newest first)

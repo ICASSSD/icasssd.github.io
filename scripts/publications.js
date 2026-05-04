@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let allPublications = [];
 
     // Fetch BibTeX file
-    fetch('data/publications.bib')
+    fetch('data/publications.bib?v=' + new Date().getTime())
         .then(response => response.text())
         .then(text => {
             // Use global parseBibTeX from utils.js

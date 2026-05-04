@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const modalInst = document.getElementById('modal-member-inst');
     const modalBio = document.getElementById('modal-member-bio');
 
-    fetch('data/team.json')
+    fetch('data/team.json?v=' + new Date().getTime())
         .then(response => response.json())
         .then(data => {
             const studentsContainer = document.getElementById('students-container');

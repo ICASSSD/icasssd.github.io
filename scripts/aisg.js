@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     if (upcomingContainer || pastContainer) {
-        fetch('../data/aisg-talks.json')
+        fetch('../data/aisg-talks.json?v=' + new Date().getTime())
             .then(response => response.json())
             .then(data => {
                 renderTalks(data);

@@ -15,8 +15,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Fetch Data
     Promise.all([
-        fetch('../data/research-schools.json').then(res => res.json()),
-        fetch('../data/publications.bib').then(res => res.text())
+        fetch('../data/research-schools.json?v=' + new Date().getTime()).then(res => res.json()),
+        fetch('../data/publications.bib?v=' + new Date().getTime()).then(res => res.text())
     ])
         .then(([schoolsData, publicationsBib]) => {
             const school = schoolsData.find(s => s.id === schoolId);

@@ -1,5 +1,17 @@
 [
     {
+        "id": 0,
+        "title": "Fourth Research School on Dynamic Sustainable Solutions",
+        "date": "2026",
+        "sortDate": "2026-05-01",
+        "category": "Education",
+        "image": "https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+        "shortDescription": "Fourth Research School on Dynamic Sustainable Solutions",
+        "longDescription": "<p>Our Research Schools series is a cornerstone of our educational outreach. This year's theme is 'Dynamic Sustainable Solutions'. These schools bring together experts, students, and practitioners to delve into advanced topics in systems science.</p><p class='mt-2'>Participants will engage in hands-on workshops, seminars, and collaborative projects designed to foster innovation and practical problem-solving skills.</p>",
+        "pageLink": "events/research-school.html",
+        "publish": true
+    },
+    {
         "id": 1,
         "title": "Research Schools",
         "date": "2023 - 2025",
@@ -9,7 +21,7 @@
         "shortDescription": "First, Second, and Third Research Schools covering advanced systems science.",
         "longDescription": "<p>Our Research Schools series is a cornerstone of our educational outreach. Spanning from 2023 to 2025, these schools bring together experts, students, and practitioners to delve into advanced topics in systems science.</p><p>Key topics include:</p><ul class='list-disc pl-5 mt-2 space-y-1'><li>Quantum Computing and Systems</li><li>Sustainable Agricultural Practices</li><li>Cognitive Science & Consciousness</li></ul><p class='mt-2'>Participants will engage in hands-on workshops, seminars, and collaborative projects designed to foster innovation and practical problem-solving skills.</p>",
         "pageLink": "events/research-school.html",
-        "publish": true
+        "publish": false
     },
     {
         "id": 3,

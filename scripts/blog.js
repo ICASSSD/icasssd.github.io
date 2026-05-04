@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const homeBlogGrid = document.getElementById('home-blog-grid');
 
     if (blogGrid || homeBlogGrid) {
-        fetch('data/blog.json')
+        fetch('data/blog.json?v=' + new Date().getTime())
             .then(response => response.json())
             .then(data => {
                 if (blogGrid) {

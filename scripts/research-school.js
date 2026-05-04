@@ -21,9 +21,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (container) {
         Promise.all([
-            fetch('../data/research-schools.json').then(res => res.json()),
-            fetch('../data/publications.bib').then(res => res.text()),
-            fetch('../data/school-mentors.json').then(res => res.json())
+            fetch('../data/research-schools.json?v=' + new Date().getTime()).then(res => res.json()),
+            fetch('../data/publications.bib?v=' + new Date().getTime()).then(res => res.text()),
+            fetch('../data/school-mentors.json?v=' + new Date().getTime()).then(res => res.json())
         ])
             .then(([schoolsData, publicationsBib, mentorsData]) => {
                 // Parse BibTeX
