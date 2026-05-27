@@ -1,6 +1,6 @@
 # ICASSSD Website
 
-The official website for the **International Centre for Applied Systems Science for Sustainable Development (ICASSSD)**.
+The official website for the **International Center for Applied Systems Science for Sustainable Development (ICASSSD)**.
 
 ## Overview
 ICASSSD is an independent international not-for-profit organization envisioning the advancement of research in Systems Science and Sustainability. This website serves as a hub for its initiatives, events, and community engagement.

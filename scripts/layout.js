@@ -163,7 +163,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     <div class="col-span-1 lg:col-span-1">
                         <h2 class="text-2xl font-bold mb-6">ICASSSD</h2>
                         <p class="text-gray-400 text-sm leading-relaxed mb-6">
-                            International Centre for Applied System Science for Sustainable Development.
+                            International Center for Applied System Science for Sustainable Development.
                         </p>
                         <div class="flex space-x-4">
                             <!-- LinkedIn -->
