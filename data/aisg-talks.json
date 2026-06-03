@@ -2,19 +2,19 @@
     {
         "id": "talk-1",
         "type": "upcoming",
-        "title": "TBD",
+        "title": "Harnessing the Power of Crowd for Human-centered Computing and AI Systems",
         "speakers": [
             {
                 "name": "Professor Dong Wang",
                 "image": "https://ischool.illinois.edu/sites/default/files/styles/large_square/public/images/Dong-Wang-23.jpg?itok=hAZyFXyh"
             }
         ],
-        "date": "May 15, 2026 | 11:00 AM EST",
+        "date": "June 3, 2026 | 10:00 AM EST",
         "summary": "",
-        "abstract": "TBD",
-        "bio": "Dong Wang joined the School of Information Sciences at the University of Illinois as an associate professor in August 2021. He previously served as an associate professor in the Computer Science and Engineering Department at the University of Notre Dame. His honors include the NSF CAREER Award, Google Faculty Research Award, Young Investigator Program (YIP) Award from the US Army Research Office, NSF CRII Award, Wing Kai Cheng Fellowship from the University of Illinois, and the Best Paper Awards of ACM/IEEE International Conference on Advances in Social Networks Analysis and Mining (ASONAM) and IEEE Real-Time and Embedded Technology and Applications Symposium (RTAS). He also served as the TPC chairs of IEEE DCoSS 2022 and ACM/IEEE ASONAM 2023. Wang's work has been applied in a wide range of real-world applications such as social network analysis, crowdsourcing, disaster response, education,  smart cities, synthetic biology, and environmental sustainability. He has published over 150 technical papers in peer reviewed conferences and journals. His research on social sensing, intelligence and computing resulted in software tools that found applications in academia, industry, and government research labs. He has authored two books, Social Edge Computing: Empowering Human-Centric Edge Computing, Learning and Intelligence (Springer, 2023) and Social Sensing: Building Reliable Systems on Unreliable Data (Elsevier, 2015). Wang holds a PhD in computer science from the University of Illinois Urbana-Champaign.",
+        "abstract": "The advent of online social media, the ubiquity of computing and communication capabilities, and the proliferation of a wide variety of digital sensors owned by individuals allow humans to create a deluge of unfiltered, unstructured and unvetted data about the physical environment. This creates unprecedented challenges and opportunities in the field of social (human-centered) sensing, intelligence and computing (SSIC), where the goal is to fully harness the power of humans and devices in their possession to accurately describe the state of the physical world and explore the collective intelligence from both humans and machines. This talk will present our work on developing analytical frameworks and real-world systems to address some key research challenges in SSIC. For example, how to use unreliable humans as reliable sensors to reconstruct the “states of the world” in both physical and information spaces? How to actively integrate crowd intelligence with AI to explore the collective strength of both humans and machines? The developed framework and systems have been applied in a wide range of real-world applications such as data integrity, crowd-based disaster response, intelligent transportation, and environment monitoring.",
+        "bio": "Dong Wang is a professor in School of Information Sciences at the University of Illinois at Urbana Champaign (UIUC). His research interests lie in the area of social sensing, intelligence and computing, human-centered AI and big data analytics. Dong Wang has published over 200 technical papers in peer reviewed conferences and journals. His research on social sensing, intelligence and computing resulted in software tools that found applications in academia, industry, and government research labs. He also authored three books: “Social Intelligence” published by Springer in 2025, “Social Edge Computing” published by Springer in 2023, and “Social Sensing” published by Elsevier in 2015. He is the recipient of NSF CAREER Award, Google Faculty Research Award, ARO Young Investigator Program (YIP), the Best Paper Award of 2022 ACM/IEEE International Conference on Advances in Social Networks Analysis and Mining (ASONAM), the Best Paper Award of 16th IEEE Real-Time and Embedded Technology and Applications Symposium (RTAS) and the Best Paper Honorable Mention of 8th IEEE SmartComp. He serves as an associate editor of IEEE Transactions on Big Data, Frontiers in Big Data, and Social Network and Analysis Journal (SNAM). He is also an IEEE Senior Member and ACM and AAAI Member. Dr. Wang’s website: https://www.wangdong.org.",
         "videoLink": null,
-        "posterLink": ""
+        "posterLink": "../resources/aisg/dong-wang.pdf"
     },
     {
         "id": "talk-2",
